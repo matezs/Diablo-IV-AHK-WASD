@@ -132,7 +132,11 @@ scriptPause := false
 	else
 	{
 		SoundBeep, 1000, 10
-		ControlClick, x%xCenter% y%yCenter%, A,, L, 1, NA
+		MouseGetPos, xpos, ypos ; Save the current mouse position
+        	MouseMove, xCenter, yCenter
+       		Send, {F14}
+        	MouseMove, xpos, ypos ; Return the mouse to its original position
+        	Sleep, %postClickDelay%
 		SetTimer, WASDscanner, Off
 	}
 	scriptPause := !scriptPause
@@ -153,7 +157,10 @@ return
 	Coord := getStopCoord(strButton)
 	xCoord := Coord.x
 	yCoord := Coord.y
-	ControlClick, x%xCoord% y%yCoord%, A,, L, 1, NA
+	MouseGetPos, xpos, ypos ; Save the current mouse position
+    	MouseMove, xCoord, yCoord
+    	Send, {F14}
+    	MouseMove, xpos, ypos ; Return the mouse to its original position
 	Sleep, %postClickDelay%
 return
 
@@ -173,7 +180,10 @@ WASDscanner:
 	xTarget := horizontalDirEval()
 	yTarget := verticalDirEval()
 
-	ControlClick, x%xTarget% y%yTarget%, A,, L, 1, NA
+	MouseGetPos, xpos, ypos ; Save the current mouse position
+    	MouseMove, xTarget, yTarget
+    	Send, {F14}
+    	MouseMove, xpos, ypos ; Return the mouse to its original position
 	Sleep, %postClickDelay%
 return
 
