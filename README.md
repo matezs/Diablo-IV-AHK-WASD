@@ -6,6 +6,7 @@ DIABLO IV: WASD controls, Proof of Concept
 	
 ### AUTHOR:
 Original Author: Tomasz 'highwind' Lewandowski
+
 Modified by: matezs
 	
 ### SUMMARY:
