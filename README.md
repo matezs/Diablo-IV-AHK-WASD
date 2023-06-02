@@ -1,11 +1,12 @@
 # Diablo-IV-AHK-WASD
-AutoHotKey script rebinding WASD keys into mouse clicks. Allows to control character in Diablo IV with WASD control scheme (similar to Diablo: Immortal).
+AutoHotKey script rebinding WASD keys into F14 key events. Allows to control character in Diablo IV with WASD control scheme (similar to Diablo: Immortal).
 
 ### TITLE:
 DIABLO IV: WASD controls, Proof of Concept
 	
 ### AUTHOR:
-Tomasz 'highwind' Lewandowski
+Original Author: Tomasz 'highwind' Lewandowski
+Modified by: matezs
 	
 ### SUMMARY:
 The script allows for player's character control in Diablo IV using popular 'WASD' control scheme.
@@ -14,9 +15,9 @@ The script allows for player's character control in Diablo IV using popular 'WAS
 - The character's control is achieved through the script, by running a timer listening for 'WASD' input within predefined time interval.
 - Desired movement direction is determined by reading the combination of pressed buttons, and translating it into 4 cardinal directions and their diagonals.
 - Each direction has a point associated with it. These points are located in the corners and in the middle of the edges of the screen.
-- At the end of each timer interval, a LMB click instruction is being sent at one of target points (mouse movement is not needed) causing character to advance in that direction.
-- After releasing all directional buttons, LMB click message is sent at the center of the screen to stop the player's avatar.
-	
+- At the end of each timer interval, an F14 key event is being sent at one of target points (mouse movement is not needed) causing character to advance in that direction.
+- After releasing all directional buttons, an F14 key event message is sent at the center of the screen to stop the player's avatar.
+
 ### CAVEAT:
 1) Player's character is not located exactly at the center of the screen. It may be necessary to tinker
 	with the value of 'yCorrection' variable, which is translating center of the screen coordinate vertically
@@ -27,12 +28,10 @@ The script allows for player's character control in Diablo IV using popular 'WAS
 	movement to become skewed.
 3) After script detects the game window, you will hear a beep within 3 seconds. The script becomes actively
 	listening after the beep.
-4) Since the script triggers movement by left mouse clicks, it is important to configure the game appropriately,
+4) Since the script triggers movement by F14 key, it is important to configure the game appropriately,
 	allowing proper synergy between the programs: <br/>
 	a) OPTIONS -> CONTROLS -> GAMEPLAY section: turn off 'Combine Move/Interact/Basic Skill Slot'. <br/>
-	b) Do not bind any skills with left mouse button (otherwise movement instructions will trigger skills
-		if accidentaly aimed at monsters). <br/>
-	c) Bind 'Move' to left mouse button. <br/>
+	c) Bind 'Move' to F14 key. To bind F14 in-game, run the "F1_to_F14.ahk" script and press F1 when assigning the key in game settings. <br/>
 	d) Unbind anything from W/A/S/D keys. <br/>
 		
 5) You still control the aim of your skills and the direction of evade with your mouse cursor.
